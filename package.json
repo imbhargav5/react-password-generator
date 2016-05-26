@@ -1,7 +1,7 @@
 {
   "name": "react-password-generator",
   "version": "1.0.0",
-  "ver":1,
+  "ver": 2,
   "scripts": {
     "test": "gulp test",
     "devtest": "gulp watch-test",
@@ -9,8 +9,7 @@
     "production": "NODE_ENV=production webpack --config skedoolit/mailapp/webpack.production.config.js --colors "
   },
   "description": "Maibox App",
-  "dependencies": {
-   },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "autoprefixer-loader": "^3.2.0",

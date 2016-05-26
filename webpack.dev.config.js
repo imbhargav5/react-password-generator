@@ -47,7 +47,7 @@ module.exports = {
                 include: [path.resolve(assetsPath+'/src')]
                 
            }, {
-                test: /\.scss$/,
+                test: /\.css$/,
                 loader: sassLoaders.join("!")
             },
             {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?mimetype=image/svg+xml'},
