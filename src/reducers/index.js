@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import { routerReducer, LOCATION_CHANGE } from 'react-router-redux';
 import {PASSWORD_GENERATORS} from '../constants';
 
 
@@ -85,7 +84,6 @@ const meta = combineReducers({
 const rootReducer = combineReducers({
 	main,
 	meta,
-    routing: routerReducer,
 });
 
 export default rootReducer;

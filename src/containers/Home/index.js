@@ -45,6 +45,14 @@ class Home extends React.Component{
 		doc.save(`${Date.now()}ReactPasswordGenerator.pdf`);
 		this._closePassword();
 	}
+
+	_addWord(word){
+
+	}
+
+	_removeWord(index){
+
+	}
 	
 	render(){
 		let {main,meta} = this.props;
@@ -53,10 +61,12 @@ class Home extends React.Component{
 		let {length, autoselect} = options;
 		let {lowerCaseAlphabet, upperCaseAlphabet, symbols, numbers, ambiguousSymbols} = include;
 		console.log(include);
+
 		if(autoselect){
 			//do something
 			
 		}
+
 		return <div className={styles.root}>
 			<div className={styles.banner}>
 					<p> Password Generator Built with React </p>
@@ -69,6 +79,11 @@ class Home extends React.Component{
 						<fieldset>
 							<label>Length </label>
 							<input type="number" onChange={(e)=>{this._changeOption('length',e.target.value)}} defaultValue={length} />
+						</fieldset>
+
+						<fieldset>
+							<label>Words </label>
+							
 						</fieldset>
 					</div>
 
@@ -100,19 +115,20 @@ class Home extends React.Component{
 					</fieldset>
 					
 
-					<fieldset>
-						<label>Autoselect </label>
-						<input type="checkbox" onChange={(e)=>{ console.log(e.target.value); console.log(e); this._changeOption('autoselect',e.target.checked)}} defaultChecked={autoselect} />
-					</fieldset>
+					
 
 					</div>
 
-					<div className={styles.password+' '+ (show ?styles.show : styles.hide)}>
+					<div className={styles.box_password+' '+ (show ?styles.show : styles.hide)}>
 							<div className={styles.heading}><p>Here is your password! </p></div>
 							
-							<p>{password}</p>
+							<p className={styles.password}>{password}</p>
 
-							<p><button onClick={()=>this._downloadAsPdf()} className={styles.action_pdf}> Download As Pdf</button> <button onClick={()=>this._closePassword()} className={styles.action_close_button}> Done</button> </p>
+
+							<p><button onClick={()=>this._generatePassword()} className={styles.action_generate}> Generate Another Password</button>
+							<button onClick={()=>this._downloadAsPdf()} className={styles.action_pdf}> Download As Pdf</button>
+							<button onClick={()=>this._closePassword()} className={styles.action_close_button}> Done</button>
+							</p>
 
 					</div>
 					<div className={styles.box}>
