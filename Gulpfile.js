@@ -21,7 +21,7 @@ var browser = os.platform() === 'linux' ? 'google-chrome' : (
  
 gulp.task('open-browser', function(){
   var options = {
-    uri: 'http://localhost:8090/',
+    uri: 'http://localhost:8090/dev.html',
     app: browser
   };
   return gulp.src(__filename)
