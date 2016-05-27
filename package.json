@@ -1,7 +1,7 @@
 {
   "name": "react-password-generator",
   "version": "1.0.0",
-  "ver": 3,
+  "ver": 4,
   "scripts": {
     "test": "gulp test",
     "devtest": "gulp watch-test",
