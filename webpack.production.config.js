@@ -43,7 +43,7 @@ module.exports = {
                 test: /.jsx?$/,
                 loaders: ['babel'],
                 include: [path.resolve(assetsPath+"/src")],
-                
+
            }, {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract('style-loader',sassLoaders.join('!'))
@@ -54,7 +54,7 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     },
     devtool : 'eval',
-    
+
     plugins: [
      new webpack.DefinePlugin({
       'process.env': {
@@ -64,14 +64,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin('vendor','vendor.js?ver='+ver),
     new ExtractTextPlugin("style.css?ver="+ver),
     new CopyWebpackPlugin([{from:'assets'}]),
-    new webpack.optimize.UglifyJsPlugin({ 
-        output: {
-          comments: false
-        }, 
-        compress: {
-            drop_console: true 
-        } 
-    }),
+    new webpack.optimize.UglifyJsPlugin(),
   ]
 
 };

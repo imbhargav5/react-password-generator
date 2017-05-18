@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import createLogger from 'redux-logger';
+import {createLogger} from 'redux-logger';
 import rootReducer from '../reducers/index';
 import getDevTools from '../containers/DevTools';
 import {routerMiddleware} from 'react-router-redux';
@@ -10,8 +10,6 @@ import * as middlewares from './middlewares';
 const DevTools = getDevTools();
 
 const loggerMiddleware = createLogger();
-
-
 
 const middleware = [thunkMiddleware, routerMiddleware(hashHistory)];
 
@@ -25,7 +23,7 @@ export default function configureStore(initialState={}) {
       ),
        DevTools.instrument()
     );
-    
+
   }else{
     buildStore = compose(
         applyMiddleware(

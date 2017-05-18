@@ -56,9 +56,9 @@ export const options = function(state={...initialOptions},action){
 const initialInclude={
 	lowerCaseAlphabet : true,
 	upperCaseAlphabet:true,
-	ambiguousSymbols : true,
+	ambiguousSymbols : false,
 	symbols : true,
-	numbers : false
+	numbers : true
 }
 export const include = function(state={...initialInclude},action){
 		let {payload} = action;
@@ -76,7 +76,7 @@ export const include = function(state={...initialInclude},action){
 
 const meta = combineReducers({
 	options,
-	include 
+	include
 });
 
 

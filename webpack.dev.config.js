@@ -45,7 +45,7 @@ module.exports = {
                 test: /.jsx?$/,
                 loaders: ['react-hot','babel'],
                 include: [path.resolve(assetsPath+'/src')]
-                
+
            }, {
                 test: /\.css$/,
                 loader: sassLoaders.join("!")
@@ -61,7 +61,9 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     },
     devtool : 'source-map',
-    
+    devServer : {
+        hot : true
+    },
     plugins: [
      new webpack.DefinePlugin({
       'process.env': {
